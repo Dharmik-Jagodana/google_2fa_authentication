@@ -21,7 +21,7 @@ class LoginSecurityController extends AdminController
         if($user->loginSecurity()->exists()){
             $google2fa = (new \PragmaRX\Google2FAQRCode\Google2FA());
             $google2fa_url = $google2fa->getQRCodeInline(
-                'MyNotePaper Demo',
+                'Google 2FA Authentication',
                 $user->email,
                 $user->loginSecurity->google2fa_secret
             );
