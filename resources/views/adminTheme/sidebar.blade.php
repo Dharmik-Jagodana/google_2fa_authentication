@@ -16,9 +16,13 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class="nav-item {{ Request::is('admin/dashboard*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{ route('dashboard') }}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span></a></li>
+            <x-alert route="{{ route('dashboard') }}" name="Dashboard" activeUrl="admin/dashboard*" icon="home"/>
+            <x-alert route="{{ route('users.index') }}" name="Users" activeUrl="admin/users*" icon="users"/>
+            <x-alert route="{{ url('admin/2fa') }}" name="Two Factor Authentication" activeUrl="admin/2fa*" icon="key"/>
+
+       <!-- <li class="nav-item {{ Request::is() ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{ route('dashboard') }}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span></a></li>
             <li class="nav-item {{ Request::is('admin/users*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{ route('users.index') }}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Users">Users</span></a></li>
-            <li class="nav-item {{ Request::is('admin/2fa*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{ url('admin/2fa') }}"><i data-feather="key"></i><span class="menu-title text-truncate" data-i18n="Users">Two Factor Authentication</span></a></li>
+            <li class="nav-item {{ Request::is('admin/2fa*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{ url('admin/2fa') }}"><i data-feather="key"></i><span class="menu-title text-truncate" data-i18n="Users">Two Factor Authentication</span></a></li> -->
         </ul>
     </div>
 </div>
